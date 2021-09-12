@@ -1,24 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RollingDice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X17-YX-nlg">
+                                <rect key="frame" x="23" y="78.5" width="82" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Below 7"/>
+                                <connections>
+                                    <action selector="below7Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ggb-tC-cFg"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dice1" translatesAutoresizingMaskIntoConstraints="NO" id="9lu-3W-FDc">
+                                <rect key="frame" x="23" y="194.5" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="120" id="7E8-Ks-FlV"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="qTJ-gW-ecG"/>
+                                    <constraint firstAttribute="width" secondItem="9lu-3W-FDc" secondAttribute="height" multiplier="1:1" id="wPb-8C-TLM"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FAt-Ya-idd">
+                                <rect key="frame" x="119.5" y="77" width="81" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Lucky 7"/>
+                                <connections>
+                                    <action selector="lucky7Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gJ9-Jo-1TY"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score = 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcl-fe-L41">
+                                <rect key="frame" x="103.5" y="363.5" width="113" height="32.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dice6" translatesAutoresizingMaskIntoConstraints="NO" id="0Sp-q3-olF">
+                                <rect key="frame" x="177" y="194.5" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="0Sp-q3-olF" secondAttribute="height" multiplier="1:1" id="MWl-Jy-fl6"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="hOm-Bs-6ad"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="120" id="iK1-Nx-tgg"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jZO-mT-GUT">
+                                <rect key="frame" x="212" y="77" width="85" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Above 7"/>
+                                <connections>
+                                    <action selector="above7Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zzO-OE-71e"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0Sp-q3-olF" firstAttribute="centerY" secondItem="9lu-3W-FDc" secondAttribute="centerY" id="71H-KF-ZhZ"/>
+                            <constraint firstItem="FAt-Ya-idd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Dhz-1d-L1K"/>
+                            <constraint firstItem="jZO-mT-GUT" firstAttribute="centerY" secondItem="FAt-Ya-idd" secondAttribute="centerY" id="HU8-lq-XCO"/>
+                            <constraint firstItem="FAt-Ya-idd" firstAttribute="centerY" secondItem="X17-YX-nlg" secondAttribute="centerY" constant="-1.5" id="JG8-fD-2cz"/>
+                            <constraint firstItem="qcl-fe-L41" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Osx-0c-5Bo"/>
+                            <constraint firstItem="0Sp-q3-olF" firstAttribute="trailing" secondItem="jZO-mT-GUT" secondAttribute="trailing" id="Uzh-xd-8uW"/>
+                            <constraint firstItem="qcl-fe-L41" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XLj-oK-Y5z"/>
+                            <constraint firstItem="FAt-Ya-idd" firstAttribute="leading" secondItem="X17-YX-nlg" secondAttribute="trailing" constant="14.5" id="ZGd-yD-LCC"/>
+                            <constraint firstItem="qcl-fe-L41" firstAttribute="top" secondItem="9lu-3W-FDc" secondAttribute="bottom" constant="49" id="ggA-uF-UMI"/>
+                            <constraint firstItem="9lu-3W-FDc" firstAttribute="top" secondItem="X17-YX-nlg" secondAttribute="bottom" constant="75" id="hKW-b7-n1r"/>
+                            <constraint firstItem="FAt-Ya-idd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="77" id="mwE-r2-btc"/>
+                            <constraint firstItem="jZO-mT-GUT" firstAttribute="leading" secondItem="FAt-Ya-idd" secondAttribute="trailing" constant="11.5" id="nmD-7y-h1J"/>
+                            <constraint firstItem="9lu-3W-FDc" firstAttribute="leading" secondItem="X17-YX-nlg" secondAttribute="leading" id="wyc-rv-LTZ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imgOne" destination="9lu-3W-FDc" id="df7-xA-Zk0"/>
+                        <outlet property="imgTwo" destination="0Sp-q3-olF" id="z9G-s4-xUD"/>
+                        <outlet property="totalScore" destination="qcl-fe-L41" id="sZq-9Y-BgX"/>
+                        <outlet property="view" destination="8bC-Xf-vdC" id="GfM-Ex-ZIw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="133.33333333333334" y="92.119565217391312"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Dice1" width="25" height="25"/>
+        <image name="Dice6" width="25" height="25"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
