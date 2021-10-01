@@ -51,7 +51,7 @@ class ViewController: UIViewController {
         if rollResult[0] + rollResult[1] == 7 {
             score += 7
         }else{
-            score -= 7
+            score -= 1
         }
         
         totalScore.text = "Score = \(score)"
